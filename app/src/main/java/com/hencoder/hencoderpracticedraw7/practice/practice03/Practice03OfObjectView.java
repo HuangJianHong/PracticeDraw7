@@ -53,8 +53,8 @@ public class Practice03OfObjectView extends View {
         float innterPaddingRight = RADIUS * 1;
         float innterPaddingTop = RADIUS * 1;
         float innterPaddingBottom = RADIUS * 3;
-        float width = getWidth() - innerPaddingLeft - innterPaddingRight - RADIUS * 2;
-        float height = getHeight() - innterPaddingTop - innterPaddingBottom - RADIUS * 2;
+        float width = getWidth() - innerPaddingLeft - innterPaddingRight - RADIUS * 2;      //Point运动的x轴范围
+        float height = getHeight() - innterPaddingTop - innterPaddingBottom - RADIUS * 2;   //Point运动的y轴范围
 
         canvas.drawCircle(innerPaddingLeft + RADIUS + width * position.x, innterPaddingTop + RADIUS + height * position.y, RADIUS, paint);
     }
