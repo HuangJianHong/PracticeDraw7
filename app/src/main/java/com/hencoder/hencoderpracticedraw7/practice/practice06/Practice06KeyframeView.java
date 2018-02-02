@@ -40,6 +40,9 @@ public class Practice06KeyframeView extends View {
         return progress;
     }
 
+    /**
+     * @param progress 0-100
+     */
     public void setProgress(float progress) {
         this.progress = progress;
         invalidate();
@@ -57,7 +60,9 @@ public class Practice06KeyframeView extends View {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(dpToPixel(15));
         arcRectF.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
-        canvas.drawArc(arcRectF, 135, progress * 2.7f, false, paint);
+        float per = progress / 100 * 360;
+        canvas.drawArc(arcRectF, 135, per, false, paint);
+//        canvas.drawArc(arcRectF, 135, progress * 2.7f, false, paint);
 
         paint.setColor(Color.WHITE);
         paint.setStyle(Paint.Style.FILL);
