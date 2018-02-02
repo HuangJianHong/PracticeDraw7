@@ -77,6 +77,7 @@ public class Practice02HsvEvaluatorLayout extends RelativeLayout {
 
             // 计算当前动画完成度（fraction）所对应的透明度
             int alpha = startValue >> 24 + (int) ((endValue >> 24 - startValue >> 24) * fraction);
+            //右移动24位， ARGB 一共32位，每8位代表一个属性，依次代表透明度(alpha)、红色(red)、绿色(green)、蓝色(blue)。
 
             // 把 HSV 转换回 ARGB 返回
             return Color.HSVToColor(alpha, outHsv);
